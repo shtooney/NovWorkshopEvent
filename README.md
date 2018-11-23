@@ -4,11 +4,11 @@
 
 **Scenario 1:** Latest Quote Wins. **Type:** Apex
 
---* PriorQuoteWipe.tgr
+* PriorQuoteWipe.tgr
 
 **Scenario 2:** Lowest Quote Prevents Quote Hike. **Type:** Apex
 
---* KeepLowestQuote.tgr
+* KeepLowestQuote.tgr
 
 **Scenario 3:** Retrieve Customer Policies. **Type:** Lightning Components + Apex + API’s
 
