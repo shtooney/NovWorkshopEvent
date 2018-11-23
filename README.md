@@ -1,4 +1,4 @@
-# November Workshop Event
+# Index & Use-Case Stories Below
 
 ## ----------------Index----------------
 
