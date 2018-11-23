@@ -1,0 +1,52 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+    <aura:handler name="init" action="{!c.myAction}" value="{!this}" />    
+    <aura:attribute name="level" type="String" default="Primary"/>  
+    <aura:attribute name="record" type="Object"/>
+    <aura:attribute name="simpleRecord" type="Object"/>
+    
+    <force:recordData aura:id="recordLoader"
+                      layoutType="FULL"
+                      recordId="{!v.recordId}"
+                      targetFields="{!v.simpleRecord}"
+                      />   
+    
+    <lightning:card>        
+        <div class="slds-p-left_x-large slds-p-right_x-large slds-p-bottom_small">
+            <div class="slds-grid slds-grid_align-spread slds-p-bottom_x-small" id="progress-bar-label-id-2">
+                <span>Customer Tier</span>
+                <span aria-hidden="true">
+                    <aura:if isTrue="{! empty(v.simpleRecord.Level__c)}">
+                        <strong>No Business with Us</strong>
+                    </aura:if>
+                    <aura:if isTrue="{! !empty(v.simpleRecord.Level__c)}">
+                        <strong>{!v.simpleRecord.Level__c} Tier</strong>
+                    </aura:if>
+
+                </span>
+            </div>
+            <div class="slds-progress-bar slds-progress-bar_circular" aria-valuemin="0" aria-valuemax="100" aria-valuenow="25" aria-labelledby="progress-bar-label-id-2" role="progressbar">
+                <aura:if isTrue="{!v.simpleRecord.Level__c == 'Primary' }">
+                    <span class="slds-progress-bar__value" style="width: 100%;">
+                        <span class="slds-assistive-text">Progress</span>
+                    </span>
+                </aura:if>
+                <aura:if isTrue="{!v.simpleRecord.Level__c == 'Secondary' }">
+                    <span class="slds-progress-bar__value" style="width: 66%;">
+                        <span class="slds-assistive-text">Progress</span>
+                    </span>
+                </aura:if>
+                <aura:if isTrue="{!v.simpleRecord.Level__c == 'Tertiary' }">
+                    <span class="slds-progress-bar__value" style="width: 33%;">
+                        <span class="slds-assistive-text">Progress</span>
+                    </span>
+                </aura:if>
+                <aura:if isTrue="{! empty(v.simpleRecord.Level__c)}">
+                    <span class="slds-progress-bar__value" style="width: 0%;">
+                        <span class="slds-assistive-text">Progress</span>
+                    </span>
+                </aura:if>
+            </div>
+        </div>        
+    </lightning:card>
+    
+</aura:component>
