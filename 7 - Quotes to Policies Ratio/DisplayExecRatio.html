@@ -1,0 +1,19 @@
+<aura:component controller="GetExecRatio" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+    <aura:handler name="init" action="{!c.myAction}" value="{!this}" />
+    <aura:attribute name="myRatio" type="String" />
+    <aura:attribute name="recordId" type="Id" /> 
+    
+    <lightning:card>
+        <lightning:layout horizontalAlign="center" verticalAlign="center">            
+            <div class="slds-grid slds-grid_vertical">
+                <div class="slds-col slds-text-heading_large slds-p-bottom_xxx-small">                    
+                    <center>Exec Ratio</center>
+                </div>
+                <div class="slds-col slds-border_bottom slds-text-heading_large">                    
+                    <center><strong>{!v.myRatio}</strong></center>
+                </div>
+            </div>            
+        </lightning:layout>
+    </lightning:card>
+    
+</aura:component>
