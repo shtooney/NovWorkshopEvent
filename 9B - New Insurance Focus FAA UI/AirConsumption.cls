@@ -17,7 +17,7 @@ global with sharing class AirConsumption {
         
         Http http = new Http();
         HttpRequest request = new HttpRequest();
-        request.setEndpoint('https://external-claims-developer-edition.na59.force.com/services/apexrest/External/');
+        request.setEndpoint('[YOUR ENDPOINT HERE]');
         request.setMethod('POST');
         request.setHeader('Content-Type', 'application/json;charset=UTF-8');
         request.setBody('{' +                       
